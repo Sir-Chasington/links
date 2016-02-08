@@ -1,0 +1,19 @@
+{
+  "name": "links",
+  "version": "1.0.0",
+  "description": "Node application that connects peer node applications in a mesh",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakebair/links.git"
+  },
+  "author": "Jacob Bair <orso.zed@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakebair/links/issues"
+  },
+  "homepage": "https://github.com/jakebair/links#readme"
+}
