@@ -4,7 +4,10 @@
   "description": "Node application that connects peer node applications in a mesh",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init": "npm install",
+    "install": "bower install",
+    "start": "node src/server/app.js"
   },
   "repository": {
     "type": "git",
