@@ -1,5 +1,5 @@
 var _ = require('lodash');
-var Link = require('../models/link.js');
+var Link = require('../models/link.model.js');
 
 module.exports = function(app) {
 
