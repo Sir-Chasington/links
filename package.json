@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/jakebair/links#readme",
   "dependencies": {
+    "asynquence": "^0.8.2",
+    "asynquence-contrib": "^0.24.0",
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
     "lodash": "^4.3.0",

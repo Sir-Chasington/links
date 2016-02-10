@@ -16,11 +16,11 @@ module.exports = function(io) {
         socket.on("msg",getmsg);
         socket.on("spy",spy);
 
-        var intv = setInterval(function(){
-            socket.emit("hello",Math.random());
-        },1000);
+        // var intv = setInterval(function(){
+        //     socket.emit("hello",Math.random());
+        // },1000);
     }
 
-    
+
     io.on("connection",connection);
 };
