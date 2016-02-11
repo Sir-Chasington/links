@@ -1,3 +1,4 @@
+var http = require('http');
 var express = require('express');
 var path = require('path');
 var app = express();
@@ -13,12 +14,19 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+var httpserv = http.createServer(app);
+var io = require('socket.io')(httpserv);
+
 
 var links = require('./routes/link.routes.js')(app);
 var hub = require('./routes/hub.routes.js')(io);
 
-var server = app.listen(3000, function () {
-    console.log('Server running at http://127.0.0.1:3000/');
-});
+var ASQ = require('asynquence');
+
+
+require('asynquence-contrib');
+
+var port = 3000;
+var	host = "127.0.0.1";
+
+httpserv.listen(port, host);
