@@ -17,10 +17,35 @@
 </p>
 <p id="broadcast"></p>
 
+<!-- Timer -->
+<div id="counter"></div>
+<button id="reset">Reset!</button>
+
 
 <script>
 var socket = io("/");
 
+//timer
+
+socket.on('timer', function (data) {
+	var time;
+	if(typeof data.countUp.hour !== 'undefined' && data.countUp.hour !== '00'){
+		time = data.countUp.hour + ':' + data.countUp.minute + ':' + data.countUp.seconds;
+	}else if(typeof data.countUp.minute !== 'undefined' && data.countUp.minute !== '00'){
+		time = data.countUp.minute + ':' + data.countUp.seconds;
+	}else{
+		time = data.countUp.seconds;
+	}
+	$('#counter').html(time);
+	//$('#counter').html(data.countUp);
+});
+
+$('#reset').click(function() {
+	socket.emit('reset');
+});
+
+
+//message
 function broadcast(msg) {
 	console.log(msg)
 	$("#broadcast").append(msg + "<br>");

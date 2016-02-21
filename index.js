@@ -17,6 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 var httpserv = http.createServer(app);
 var io = require('socket.io')(httpserv);
 
+var count = require('./modules/count.js')(io);
+
 
 var links = require('./routes/link.routes.js')(app);
 var hub = require('./routes/hub.routes.js')(io);
